@@ -183,9 +183,13 @@ body {
 
 .hero-title {
     font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-subtitle {
@@ -346,16 +350,17 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: 1rem;
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    background-color: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill-item:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    background-color: rgba(30, 41, 59, 0.7);
     border-color: var(--accent-color);
-    box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .skill-item i {
@@ -376,19 +381,21 @@ body {
 }
 
 .project-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
+    background-color: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(96, 165, 250, 0.3), var(--shadow-xl);
-    border-color: var(--accent-color);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(96, 165, 250, 0.2);
+    border-color: rgba(96, 165, 250, 0.5);
+    background-color: rgba(30, 41, 59, 0.8);
 }
 
 .project-image {
@@ -466,25 +473,28 @@ body {
 }
 
 .price-card {
-    background-color: var(--bg-card);
-    border: 2px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
+    background-color: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2.5rem;
     text-align: center;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .price-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(96, 165, 250, 0.3), var(--shadow-xl);
-    border-color: var(--accent-color);
+    transform: translateY(-10px);
+    background-color: rgba(30, 41, 59, 0.8);
+    border-color: rgba(96, 165, 250, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .price-card.featured {
     border-color: var(--accent-color);
+    background-color: rgba(30, 58, 138, 0.2);
     transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(96, 165, 250, 0.4), var(--shadow-xl);
+    box-shadow: 0 0 40px rgba(96, 165, 250, 0.2), var(--shadow-xl);
 }
 
 .price-badge {
