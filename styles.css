@@ -256,6 +256,12 @@ body {
     border-top: 1px solid var(--border-color);
 }
 
+.about-mobile-avatar {
+    display: none; /* Скрываем на ПК */
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
 .about-content {
     max-width: 800px;
     margin: 0 auto;
@@ -687,6 +693,19 @@ body {
     .about-content {
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .about-mobile-avatar {
+        display: flex; /* Показываем только на мобильных */
+    }
+
+    .about-mobile-avatar .avatar {
+        width: 200px; /* Размер чуть меньше для мобильных */
+        height: 200px;
+    }
+
+    .about-mobile-avatar .avatar i {
+        font-size: 80px;
     }
 
     .projects-grid,

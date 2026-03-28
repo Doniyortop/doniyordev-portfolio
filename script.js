@@ -195,24 +195,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Логика отображения аватарки
-    const avatarImg = document.getElementById('avatarImage');
-    const avatarIcon = document.getElementById('avatarIcon');
+    const avatars = [
+        { img: document.getElementById('avatarImage'), icon: document.getElementById('avatarIcon') },
+        { img: document.querySelector('.mobile-avatar-img'), icon: document.querySelector('.mobile-avatar-icon') }
+    ];
 
-    if (avatarImg) {
-        avatarImg.onload = function() {
-            avatarImg.style.display = 'block';
-            if (avatarIcon) avatarIcon.style.display = 'none';
-        };
-        
-        avatarImg.onerror = function() {
-            avatarImg.style.display = 'none';
-            if (avatarIcon) avatarIcon.style.display = 'block';
-        };
-        
-        // Перезагружаем src, чтобы сработал onload/onerror
-        const currentSrc = avatarImg.src;
-        avatarImg.src = currentSrc;
-    }
+    avatars.forEach(avatar => {
+        if (avatar.img) {
+            avatar.img.onload = function() {
+                avatar.img.style.display = 'block';
+                if (avatar.icon) avatar.icon.style.display = 'none';
+            };
+            
+            avatar.img.onerror = function() {
+                avatar.img.style.display = 'none';
+                if (avatar.icon) avatar.icon.style.display = 'block';
+            };
+            
+            // Перезагружаем src, чтобы сработал onload/onerror
+            const currentSrc = avatar.img.src;
+            avatar.img.src = currentSrc;
+        }
+    });
 
     // Обработка кликов по карточкам проектов
     const projectCards = document.querySelectorAll('.project-card');
