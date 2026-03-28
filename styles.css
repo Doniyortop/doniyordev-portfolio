@@ -688,6 +688,7 @@ body {
 
     .hero-image {
         order: 2;
+        display: none; /* Скрываем главную аватарку на мобилках */
     }
 
     .about-content {
